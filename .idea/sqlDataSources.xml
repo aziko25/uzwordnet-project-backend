@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="b9ae5681-9ab3-42cd-b58a-7f4910dab164" name="uzwordnet_project@localhost (DDL) Mapping">
+      <data-sources ddl="c6f655cc-763b-468b-b89d-c91849165fc3" />
+    </mapping>
+  </component>
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="c6f655cc-763b-468b-b89d-c91849165fc3" />
+          <option name="name" value="uzwordnet_project@localhost (DDL)" />
+          <option name="dbmsName" value="POSTGRES" />
+          <option name="urls">
+            <array />
+          </option>
+          <option name="outLayout" value="File per object by schema.groovy" />
+        </State>
+      </list>
+    </option>
+  </component>
+</project>

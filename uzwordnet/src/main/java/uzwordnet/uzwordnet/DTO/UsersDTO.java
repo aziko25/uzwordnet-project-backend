@@ -21,6 +21,7 @@ public class UsersDTO {
     private Integer validationScore;
     private Integer proficiencyLevelId;
     private String proficiencyLevelName;
+    private String role;
 
     public UsersDTO(Users user) {
 
@@ -35,5 +36,7 @@ public class UsersDTO {
             this.proficiencyLevelId = user.getProficiencyLevelId().getId();
             this.proficiencyLevelName = user.getProficiencyLevelId().getLevelName();
         }
+
+        this.role = user.getRole();
     }
 }
