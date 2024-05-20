@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Controller</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+</head>
+<body>
+<button id="createBtn">Create</button>
+<button id="joinBtn">Join</button>
+
+<script>
+    const socket = new SockJS('http://localhost:555/ws');
+    const stompClient = Stomp.over(socket);
+
+    stompClient.connect({}, function(frame) {
+        console.log('Connected: ' + frame);
+        stompClient.subscribe('/topic/rooms', function(message) {
+            console.log('Message: ' + message.body);
+        });
+    });
+
+    document.getElementById('createBtn').addEventListener('click', function() {
+        stompClient.send("/app/create", {}, JSON.stringify({'name': 'User1'}));
+    });
+
+    document.getElementById('joinBtn').addEventListener('click', function() {
+        stompClient.send("/app/join", {}, JSON.stringify({'name': 'User2'}));
+    });
+</script>
+</body>
+</html>
